@@ -1,0 +1,137 @@
+<html>
+<head>
+<style>
+*{
+margin:0;
+padding:0;
+color:#ecd1b4;
+}
+.main{
+height:100%;
+width:100%;
+background:#ecd1b4;
+font-family:arial;
+}
+.calculator{
+background:#1a1a1a;
+height:620px;
+width:490px;
+position:absolute;
+left:530px;
+top:60px;
+border-radius:20px;
+box-shadow:2px 2px 15px 7px gray;
+}
+.screen{
+width:450px;
+height:100px;
+margin:auto;
+border-radius:20px;
+padding:20px 15px 20px 15px;
+}
+.screen input{
+width:100%;
+height:100%;
+border-radius:20px;
+background:#4a4240;
+color:#ecd1b4;
+text-align:end;
+font-size:50px;
+padding:30px 15px 30px 15px;
+border:4px solid #ecd1b4;
+}
+.buttons{
+background:#1b1b1e;
+height:450px;
+width:450px;
+margin:auto;
+border-radius:18px;
+padding:8px 0 0 6px;
+user-select:none;
+}
+.num{
+display:inline-block;
+background:#4a4240;
+height:100px;
+width:100px;
+margin:4px;
+border-radius:40px;
+line-height:100px;
+text-align:center;
+font-size:35px;
+cursor:pointer;
+}
+.sign{
+display:inline-block;
+background:#9e7758;
+height:100px;
+width:100px;
+margin:4px;
+border-radius:40px;
+line-height:100px;
+text-align:center;
+font-size:40px;
+cursor:pointer;
+}
+/* <!-- .sign:hover{ -->
+<!-- background:#705748; -->
+<!-- } --> */
+
+
+</style>
+<script>
+
+function clearDisplay(){
+input.display.value = ""
+}
+
+function addToDisplay(a){
+
+input.display.value += a
+
+
+//arr = input.display.value.split("")
+//arr.push(a)
+//input.display.value = arr.join("")
+}
+
+function equalTo(){
+input.display.value = eval(input.display.value)
+}
+
+</script>
+</head>
+<body>
+<div class="main">
+<div class="calculator">
+<div class="screen">
+<form name="input">
+<input type="text" name="display">
+</form>
+</div>
+<div class="buttons">
+<div class="num" onclick="addToDisplay('7')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">7</div>
+<div class="num" onclick="addToDisplay('8')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">8</div>
+<div class="num" onclick="addToDisplay('9')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">9</div>
+<div class="sign" onclick="addToDisplay('/')" onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">&divide;</div>
+
+<div class="num" onclick="addToDisplay('4')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">4</div>
+<div class="num" onclick="addToDisplay('5')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">5</div>
+<div class="num" onclick="addToDisplay('6')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">6</div>
+<div class="sign" onclick="addToDisplay('*')" onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">&times;</div>
+
+<div class="num" onclick="addToDisplay('1')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">1</div>
+<div class="num" onclick="addToDisplay('2')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">2</div>
+<div class="num" onclick="addToDisplay('3')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">3</div>
+<div class="sign" onclick="addToDisplay('-')"onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">&minus;</div>
+
+<div class="num" onclick="addToDisplay('0')" onmousedown="style.background='#302d2e'" onmouseup="style.background='#4a4240'">0</div>
+<div class="sign" onclick="clearDisplay()" onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">C</div>
+<div class="sign" onclick="equalTo()" onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">=</div>
+<div class="sign" onclick="addToDisplay('+')" onmousedown="style.background='#705748'" onmouseup="style.background='#9e7758'">&plus;</div>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>
